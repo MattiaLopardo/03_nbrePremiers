@@ -29,8 +29,12 @@ int main() {
 
     } while (nbr < 2 || nbr >= 1000);
     cout << "vous avez choisi ce nombre : " << nbr << endl;
+int a = 53;
+int aracine = static_cast<int>(sqrt(a));
 
-
-
+    for (int b = 2; b <= aracine; ++b) {
+        if (a % b != 0 && b != aracine) {cout << b << endl; continue;}
+        else if (a % b == 0 && b!= aracine) {cout << "pas premier" << endl; break;}
+        else if (b == aracine) {cout << a << endl;}}
 
 }
