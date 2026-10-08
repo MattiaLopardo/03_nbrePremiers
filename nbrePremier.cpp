@@ -17,13 +17,17 @@
 #include <iomanip>
 #include <cmath>
 #include <limits>
+#include <windows.h>
 
 using namespace std;
 
 int main() {
+
+    // Permet d'afficher des lettres accentuées
+    SetConsoleOutputCP(CP_UTF8);
     const int n_col = 5;
     char repeat = 'O';
-    cout << "Debut du programme" << endl;
+    cout << "Début du programme" << endl;
 
     //Boucle principale qui permet de répter le programme si l'utilisateur le veut
     while (repeat == 'O') {
@@ -31,7 +35,7 @@ int main() {
 
         //Boucle de contrôle de la variable nbr en entrée. Elle doit être comprise entre [2-1000]
         do {
-        cout << "entrer une valeur [2-1000] : " << endl;
+        cout << "veuillez entrer une valeur [2-1000] : " << endl;
         cin >> nbr;
 
     } while (nbr < 2 || nbr > 1000);
@@ -65,7 +69,7 @@ int main() {
 
     //Boucle permettant de demander à l'utilisateur si il veut recommencer
     do {
-        cout << "Voulez-vous recommencer [O/N] :" << endl;
+        cout << "Voulez-vous recommencer ? [O/N] :" << endl;
         cin >> repeat;
 
     } while (repeat != 'O' and repeat != 'N');
