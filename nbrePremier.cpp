@@ -2,7 +2,7 @@
   ------------------------------------------------------------------------------
   Fichier     : nbre_1er.cpp
   Auteur(s)   : Mattia Lopardo
-  Date        : 07.10.26
+  Date        : 10.10.26
 
   But         : identifier tous les nombres premiers compris
                 et une valeur choisie par l'utilisateur
@@ -15,7 +15,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 #include <limits>
 #include <windows.h>
 
@@ -29,7 +28,7 @@ int main() {
     char repeat = 'O';
     cout << "Début du programme" << endl;
 
-    //Boucle principale qui permet de répter le programme si l'utilisateur le veut
+    //Boucle principale qui permet de répéter le programme si l'utilisateur le veut
     while (repeat == 'O') {
     int nbr = 0;
 
@@ -44,20 +43,20 @@ int main() {
     int compteur = 0;
 
     //Boucle permettant de tester chaque nombres et de voir lesquelles sont premiers jusqu'à la limite imposée par l'utilisateur
-    for (int a = 2; a <= nbr; ++a) {
+    for (int nominateur = 2; nominateur <= nbr; ++nominateur) {
 
     //Boucle permettant de déterminé si un nombre est entier en le divisant successivement par chaque nombres jusqu'à lui-même
-    for (int b = 2 ; b <= a; ++b) {
+    for (int denominateur = 2 ; denominateur <= nominateur; ++denominateur) {
 
         //Condition qui test si la division entière est possible. Si ce n'est pas le cas, la boucle s'exécute à nouveau
-        if (a % b != 0 && b != a) { continue;}
+        if (nominateur % denominateur != 0 && denominateur != nominateur) { continue;}
 
         //Condition qui test si la division entière est possible. Si c'est le cas, la boucle s'arrête et le nombre n'est pas considéré comme premier
-        else if (a % b == 0 && b!= a) { break;}
+        else if (nominateur % denominateur == 0 && denominateur!= nominateur) { break;}
 
         //Dernière condition qui affiche le nombre si il est uniquement divisible par lui-même et 1
-        else if (b == a) {
-            cout << left << setw(8)<< a;
+        else if (denominateur == nominateur) {
+            cout << left << setw(8)<< nominateur;
             ++compteur;
 
             //Condition permettant d'afficher les nombres entiers sou forme de 5 colonnes
